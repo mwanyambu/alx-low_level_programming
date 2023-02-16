@@ -1,1 +1,1 @@
-0-preprocessor initiates the  file to the preprocessor stage
+1-compiler next stage after preprocessing 
