@@ -5,11 +5,8 @@
  */
 int main(void)
 {
+	puts("\"programming is like building a multilingual puzzle");
 
-char message = "Programming is like building a multilingual puzzle"
-/*initialize message */
-
-puts(message)
-return (0);
+	return (0);
 
 }
