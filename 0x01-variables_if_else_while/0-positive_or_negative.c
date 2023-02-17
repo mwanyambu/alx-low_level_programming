@@ -6,10 +6,8 @@
  */
 int main(void)
 {
-	int n;
+	int n = get int(input("enter an interger ");
 
-	printf("Please enter an integer\n: ");
-	scanf("%d", &n);
 	if (n > 0)	
 	{
 		printf("is positive\n");
