@@ -8,9 +8,9 @@ int main(void)
 {
 	int n;
 
-	printf("please enter an integer n: ");
-
-	if (n > 0)
+	printf("Please enter an integer n: ");
+	scanf("%d", &n);
+	if (n > 0)	
 	{
 		printf("is positive\n");
 	}
