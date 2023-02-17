@@ -1,9 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-/**
- * more headers goes there */
-
+/* more headers goes there */
 /* betty style doc for function main goes there */
 /**
  * main - prints last digit
