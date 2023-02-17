@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	int n = get int(input("enter an interger ");
+	int n = int(input("enter an interger ");
 
 	if (n > 0)	
 	{
