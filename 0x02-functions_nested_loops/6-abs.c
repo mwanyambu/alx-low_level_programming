@@ -2,7 +2,7 @@
 
 /**
  * _abs - prints absolute value
- * @a the interger to be computed
+ * @a: the interger to be computed
  * Return: returs abs value
  */
 int _abs(int a)
