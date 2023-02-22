@@ -13,7 +13,7 @@ int main(void)
 	y = 2;
 	boolean = boolean2 = 1;
 	printf("%ld, %ld", x, y);
-	for (c = 0; c <= 98; c++)
+	for (c = 0; c <= 96; c++)
 	{
 		if (boolean)
 		{
