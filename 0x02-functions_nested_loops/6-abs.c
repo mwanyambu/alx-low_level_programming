@@ -7,7 +7,7 @@
  */
 int _abs(int a)
 {
-	intk = a;
+	int k = a;
 	int absvalue;
 
 	if (k < 0)
