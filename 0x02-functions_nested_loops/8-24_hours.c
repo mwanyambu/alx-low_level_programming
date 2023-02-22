@@ -1,4 +1,4 @@
-#include "main.h" 
+#include "main.h"
 
 /**
 * jack_bauer - prints every minute of the day
@@ -10,7 +10,6 @@ void jack_bauer(void)
 	int x, y;
 
 	x = 0;
-	
 	while (x < 24)
 	{
 		y = 0;
