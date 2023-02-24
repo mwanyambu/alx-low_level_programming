@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * print_sqaure - prints a square
- * @size: the size of the sqaure
- * @#: used to print the sqaure
+ * print_square - prints a square
+ * @size: the size of the square
+ * @#: used to print the square
  */
-void print_sqaure(int size)
+void print_square(int size)
 {
 	int x, y;
 
