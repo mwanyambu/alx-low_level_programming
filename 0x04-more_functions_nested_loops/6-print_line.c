@@ -3,13 +3,13 @@
 /**
  * print_line - draws a straight line from point a to b
  * @n: number of times a character should be printed
- * Return: return straight line
+ * Return: return empty
  */
 void print_line(int n)
 {
 	int x;
 
-	if (x <= 0)
+	if (n <= 0)
 	{
 		_putchar('\n');
 	}
