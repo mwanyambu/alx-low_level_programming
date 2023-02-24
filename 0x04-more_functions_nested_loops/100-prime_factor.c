@@ -7,7 +7,7 @@
  */
 int main(void)
 {
-	long i, maxj;
+	long i, maxf;
 	long number = 612852475143;
 	double square = sqrt(number);
 
@@ -15,10 +15,10 @@ int main(void)
 	{
 		if (number % i == 0)
 		{
-			maxj = number / i;
+			maxf = number / i;
 		}
 	}
-	printf("%d\n", maxj);
+	printf("%ld\n", maxf);
 	return (0);
 }
 
