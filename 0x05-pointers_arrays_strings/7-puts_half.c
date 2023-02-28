@@ -4,7 +4,7 @@
  * puts_half - prints half of the strting
  * @str: the string
  */
-void puts_half(char str)
+void puts_half(char *str)
 {
 	int x = 0;
 	int y;
@@ -13,14 +13,14 @@ void puts_half(char str)
 	{
 		x++;
 	}
-	if (x % 2 ==1)
+	if (x % 2 == 1)
 	{
 		y = (x - 1) / 2;
 		y += 1;
 	}
 	else
 	{
-		y = x/ 2;
+		y = x / 2;
 	}
 	for  (; y < x; y++)
 	{
