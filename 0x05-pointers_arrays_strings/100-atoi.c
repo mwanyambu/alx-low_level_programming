@@ -18,13 +18,13 @@ int _atoi(char *s)
 		{
 			 c *= -1;
 		}
-		while (s[a] >= 48 && s9[a] <=57)
+		while (s[a] >= 48 && s[a] <= 57)
 		{
 			d = 1;
 			b = (b * 10) + (s[a] - '0');
 			a++;
 		}
-		if (d ==1)
+		if (d == 1)
 		{
 			break;
 		}
