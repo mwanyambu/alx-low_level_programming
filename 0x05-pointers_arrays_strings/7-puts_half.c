@@ -6,7 +6,7 @@
  */
 void puts_half(char str)
 {
-	int x;
+	int x = 0;
 	int y;
 
 	while (str[x] != '\0')
@@ -16,7 +16,7 @@ void puts_half(char str)
 	if (x % 2 ==1)
 	{
 		y = (x - 1) / 2;
-		y+=1;
+		y += 1;
 	}
 	else
 	{
@@ -24,7 +24,7 @@ void puts_half(char str)
 	}
 	for  (; y < x; y++)
 	{
-		_putcha(str[y]);
+		_putchar(str[y]);
 	}
 	_putchar('\n');
 }
