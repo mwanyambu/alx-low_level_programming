@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 /**
  *print_array - prints a collection of elements of the same data type
@@ -15,7 +16,7 @@
 		printf("%d", a[c]);
 		if (c != (n - 1))
 		{
-			printf(",");
+			printf(", ");
 		}
 	}
 	printf("\n");
