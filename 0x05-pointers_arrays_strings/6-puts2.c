@@ -2,7 +2,7 @@
 
 /**
  * puts2 - prints every character of a string
- * str: the string
+ * @str: the string
  */
 void puts2(char *str)
 {
@@ -13,7 +13,7 @@ void puts2(char *str)
 	{
 		y++;
 	}
-	for (x = 0; x < y; x+= 2)
+	for (x = 0; x < y; x += 2)
 	{
 		_putchar(str[x]);
 	}
