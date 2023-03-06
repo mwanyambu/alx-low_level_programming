@@ -3,9 +3,9 @@
 /**
  * print_chessboard - starting point
  * @a: array
- * Return: array
+ * Return: 0
  */
-void print_chessboard(char (*a)[80])
+void print_chessboard(char (*a)[8])
 {
 	int x;
 	int y;
