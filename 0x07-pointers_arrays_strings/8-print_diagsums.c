@@ -5,7 +5,7 @@
  * print_diagsums - prints out the sum of two diagnols of a square matrix
  * @a: pointer
  * @size: int input
- * Return: sum
+ * Return: 0
  */
 void print_diagsums(int *a, int size)
 {
@@ -16,7 +16,7 @@ void print_diagsums(int *a, int size)
 
 	for (i = 0; i < size; i++)
 	{
-		sum1 = sum1 + a[x * size + i];
+		sum1 = sum1 + a[i * size + i];
 	}
 	for (i = size - 1; i >= 0; i--)
 	{
