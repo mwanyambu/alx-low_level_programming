@@ -1,5 +1,7 @@
 #include "main.h"
+#include <stdio.h>
 
+int prime(int n, int a);
 /**
  * is_prime_number - returns a prime number
  * @n: input
@@ -13,22 +15,22 @@ int is_prime_number(int n)
 /**
  * prime - checks for prime number
  * @n: input
- * @i: divisor
+ * @a: divisor
  * Return: 1 if prime else 0
  */
-int prime(int n, int i)
+int prime(int n, int a)
 {
 	if (n <= 1)
 	{
 		return (0);
 	}
-	if (n % i == 0 && i > 1)
+	if (n % a == 0 && a > 1)
 	{
 		return (0);
 	}
-	if ((n / i) < 1)
+	if ((n / a) < 1)
 	{
 		return (1);
 	}
-	return (prime(n, i + 1));
+	return (prime(n, a + 1));
 }
