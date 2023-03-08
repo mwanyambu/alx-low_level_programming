@@ -7,9 +7,10 @@
  */
 int str_len(char *z)
 {
-	if (z == '\0')
+	if (*z == '\0')
 	{
 		return (0);
+	}
 	else
 		return (1 + str_len(z + 1));
 }
