@@ -18,7 +18,7 @@ int str_len(char *z)
  * @s: string
  * @t: int
  * @u: int
- * Return: comparison
+ * Return: .
  */
 int _strcmp(char *s, int t, int u)
 {
@@ -44,4 +44,4 @@ int is_palindrome(char *s)
 		return (1);
 	return (_strcmp(s, 0, str_len(z) - 1));
 
-
+}
