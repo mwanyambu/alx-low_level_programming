@@ -1,5 +1,7 @@
 #include "main.h"
+#include <stdio.h>
 
+int _root(int n, int x);
 /**
  * _sqrt_recursion - return a squareroot of an integer
  * @n: square
@@ -7,28 +9,28 @@
  */
 int _sqrt_recursion(int n)
 {
-	return (_sqrt(n, 1));
+	return (_root(n, 1));
 }
 
 /**
- * _sqrt - calculates square root
+ * _root - calculates square root
  * @n: input
- * @i: root
+ * @x: root
  * Return: square root
  */
 
-int _sqrt(int n, int i)
+int _root(int n, int x)
 {
-	int sqrt = i * i;
+	int rt = x * x;
 
-	if (sqrt > n)
+	if (rt > n)
 	{
 		return (-1);
 	}
-	if (sqrt == n)
+	if (rt == n)
 	{
-		return (i);
+		return (x);
 	}
-	return (_sqrt(n, i + 1));
+	return (_root(n, x + 1));
 }
 
