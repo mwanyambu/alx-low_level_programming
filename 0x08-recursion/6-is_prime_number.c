@@ -28,7 +28,7 @@ int prime(int n, int a)
 	{
 		return (0);
 	}
-	if ((n / a) < 1)
+	if ((n / a) < a)
 	{
 		return (1);
 	}
