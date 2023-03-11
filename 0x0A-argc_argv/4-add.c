@@ -10,7 +10,7 @@
  */
 int check_num(char *str)
 {
-	int count;
+	unsigned int count;
 
 	count = 0;
 	while (count < strlen(str))
@@ -41,7 +41,7 @@ int  main(int argc, char *argv[])
 	{
 		if (check_num(argv[count]))
 		{
-			convert_str_int = atoi(argv[count]);
+			convert_str_to_int = atoi(argv[count]);
 			sum += convert_str_to_int;
 		}
 		else
