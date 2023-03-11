@@ -11,9 +11,9 @@
 int main(int argc, char *argv[])
 {
 	int current, all, change, new;
-	int coint[] = {25, 10, 5, 2, 1};
+	int coins[] = {25, 10, 5, 2, 1};
 
-	current = all = change = new;
+	current = all = change = new = 0;
 
 	if (argc != 2)
 	{
@@ -27,13 +27,13 @@ int main(int argc, char *argv[])
 		printf("0\n");
 		return (0);
 	}
-	while (coins[current] != '0\')
+	while (coins[current] != '\0')
 	{
 		if (all >= coins[current])
 		{
 			new = (all / coins[current]);
 			change += new;
-			all -= coins[current] * new
+			all -= coins[current] * new;
 		}
 		current++;
 	}
