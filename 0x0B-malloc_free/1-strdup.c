@@ -1,21 +1,22 @@
 #include < stdlib.h>
 #include "main.h"
+#include <stdio.h>
 
 /**
  * _strdup - copies a string
- * @s: duplicate
+ * @str: duplicate
  * Return: pointer
  */
-char *_strdup(char *s)
+char *_strdup(char *str)
 {
 	char *dup;
 	int a, b = 0;
 
-	if (s == NULL)
+	if (str == NULL)
 		return (NULL);
 	a = 0;
 
-	while (s[a] != '\0')
+	while (str[a] != '\0')
 		a++;
 
 	dup = malloc(sizeof(char) * (a + 1));
@@ -24,6 +25,6 @@ char *_strdup(char *s)
 		return (NULL);
 
 	for (b = 0; dup[b]; b++)
-		dup[a] = s[b];
+		dup[a] = str[b];
 	return (dup);
 }
