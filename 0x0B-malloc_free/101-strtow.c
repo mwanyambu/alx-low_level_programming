@@ -12,7 +12,7 @@ int wlen(char *str)
 {
 	int index = 0, len = 0;
 
-	while (*(str + index) && *(str + len) != ' ')
+	while (*(str + index) && *(str + index) != ' ')
 	{
 		len++;
 		index++;
