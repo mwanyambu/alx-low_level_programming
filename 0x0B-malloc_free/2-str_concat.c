@@ -42,8 +42,8 @@ char *str_concat(char *s1, char *s2)
 	}
 	ind = (_strlen(s1) + _strlen(s2) + 1);
 
-	conc = malloc(sizeof(char) * len);
-	if (conc == NULL)
+	conc = (char *) malloc(sizeof(char) * size);
+	if (conc == 0)
 	{
 		return (NULL);
 	}
