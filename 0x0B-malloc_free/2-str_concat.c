@@ -2,12 +2,22 @@
 #include <stdlib.h>
 
 /**
- * str_concat - concatnates tow strings
- * @s1: string 1
- * @s2: string 2
- * Return: pointer
+ * _strlen - checks length of array
+ * @s: array
+ * Return: i
  */
-char *str_concat(char *s1, char *s2);
+int _strlen(char *s)
+{
+	unsigned int i;
+
+	i = 0;
+	while (s[i] != '\0')
+	{
+		i++;
+	}
+	return (i);
+}
+
 /**
  * str_concat - joins two strings
  * @s1: string 1
