@@ -29,7 +29,7 @@ char *str_concat(char *s1, char *s2)
 {
 	char *conc;
 	int i;
-	int len = 0;
+	int j;
 	int ind = 0;
 
 	if (s1 == NULL)
@@ -40,22 +40,21 @@ char *str_concat(char *s1, char *s2)
 	{
 		s2 = " ";
 	}
-	for (i = 0; s1[i] || s2[i]; i++)
-	{
-		len++;
-	}
+	ind = (_strlen(s1) + _strlen(s2) + 1);
+
 	conc = malloc(sizeof(char) * len);
 	if (conc == NULL)
 	{
 		return (NULL);
 	}
-	for (i = 0; s1[i]; i++)
+	for (i = 0; *(s1 + i) != '\0'; i++)
 	{
-		conc[ind++] = s1[i];
+		*(conc + i) = *(s1 + i);
 	}
-	for (i = 0; s2[i]; i++)
+	for (j = 0; *(s2 + j) != '\0'; j++)
 	{
-		conc[ind++] = s2[i];
+		*(conc + i) = *(s2 + j);
+		i++;
 	}
 	return (conc);
 }
