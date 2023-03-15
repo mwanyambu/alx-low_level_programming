@@ -6,12 +6,11 @@
  * @ac: integer argument
  * @av: string argument
  * Return: pointer to new string or NULL if it fails
- * Description: each argument should be followed by a new line
  */
 char *argstostr(int ac, char **av)
 {
 	char *str;
-	int count = 0, i = 0, j - 0, k = 0;
+	int count = 0, i = 0, j = 0, k = 0;
 
 	if (ac == 0 || av == NULL)
 	{
