@@ -63,6 +63,11 @@ char **strtow(char *str)
 	{
 		return (NULL);
 	}
+	strs = malloc(sizeof(char *) * (words + 1));
+	if (strs == NULL)
+	{
+		return (NULL);
+	}
 	for (w = 0; w < words; w++)
 	{
 		while (str[index] == ' ')
