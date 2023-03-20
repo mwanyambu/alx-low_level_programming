@@ -14,7 +14,7 @@ int _strlen(char *str)
 {
 	int len = 0;
 
-	while (str++)
+	while (*str++)
 	{
 		len++;
 	}
