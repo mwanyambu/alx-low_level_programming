@@ -1,4 +1,4 @@
-#include "calc.h"
+#include "3-calc.h"
 
 /**
  * main - performs simple operations
@@ -8,35 +8,30 @@
  */
 int main(int argc, char *argv[])
 {
-	int first_arg, second_arg, result;
-	char o;
-
-	int (*func)(int, int);
+	int num1, num2;
+	char *op;
 
 	if (argc != 4)
 	{
 		printf("Error\n");
 		exit(98);
 	}
-	first_arg = atoi(argv[1]);
-	second_arg = atoi(argv[3]);
+	num1 = atoi(argv[1]);
+	op = argv[2];
+	num2 = atoi(argv[3]);
 
-	func = get_op_func(argv[2]);
-
-	if (!func)
+	if (get_op_func(op) == NULL || op[1] != '\0')
 	{
 		printf("Error\n");
 		exit(99);
 	}
-	o = *argv[2];
 
-	if ((o == '/' || o == '%') && second_arg == 0)
+	if ((*op == '/' || *op == '%') && num2 == 0)
 	{
 		printf("Error\n");
 		exit(100);
 	}
-	result = func(first_arg, second_arg);
-	printf("%d\n", result);
+	printf("%d\n", get_op_func(op)(num1, num2));
 	return (0);
 }
 
