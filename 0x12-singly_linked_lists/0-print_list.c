@@ -6,9 +6,9 @@
  * @h: a pointer to list_t
  * Return: number of nodess in list_t
  */
-size_t print_list(const list_t *h) /* prototype */
+size_t print_list(const list_t *h)
 {
-	size_t nodes = 0; /* initialise the number of nodes to zero */
+	size_t nodes = 0;
 
 	while (h)
 	{
