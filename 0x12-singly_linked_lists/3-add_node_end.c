@@ -10,7 +10,6 @@
 list_t *add_node_end(list_t **head, const char *str)
 {
 	char *strs;
-	
 	int len;
 	list_t *list_x, *last_node;
 
