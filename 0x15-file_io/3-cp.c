@@ -34,22 +34,20 @@ int main(int argc, char *argv[])
 	int _read, _write;
 	char *buffer;
 
-	if (argc < 3)
+	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "usage: cp file_from file_to\n");
 		exit(97);
 	}
 	buffer = _buffer(argv[2]);
 	file_from = open(argv[1], O_RDONLY);
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0644);
+	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0644);
 	_read = read(file_from, buffer, 1024);
 	_write = write(file_to, buffer, _read);
 
 	if (file_from == -1 || _read == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
-		close(file_from);
-		close(file_to);
 		free(buffer);
 		exit(98);
 	}
