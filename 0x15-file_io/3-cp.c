@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdio.h>
 
 char *_buffer(char *file);
 
@@ -9,16 +10,16 @@ char *_buffer(char *file);
  */
 char *_buffer(char *file)
 {
-	char *_buffer;
+	char *buffer;
 
-	_buffer = malloc(sizeof(char) * 1024);
+	buffer = malloc(sizeof(char) * 1024);
 
-	if (_buffer == NULL)
+	if (buffer == NULL)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
 		exit(99);
 	}
-	return (_buffer);
+	return (buffer);
 }
 
 /**
@@ -27,31 +28,31 @@ char *_buffer(char *file)
  * @argv: array of arguments
  * Return: 0 if successful
  */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
-	int file_from;
-	int file_to;
-	int _read, _write;
+	int old_file, new_file;
+	ssize_t _read, _write;
 	char *buffer;
 
 	if (argc != 3)
 	{
-		dprintf(STDERR_FILENO, "usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "%s\n", "Usage: cp file_from file_to");
 		exit(97);
 	}
-	buffer = _buffer(argv[2]);
-	file_from = open(argv[1], O_RDONLY);
-	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0644);
-	_read = read(file_from, buffer, 1024);
-	_write = write(file_to, buffer, _read);
 
-	if (file_from == -1 || _read == -1)
+	old_file = open(argv[1], O_RDONLY);
+	new_file = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0644);
+	buffer = _buffer(argv[2]);
+	_read = read(old_file, buffer, 1024);
+	_write = write(new_file, buffer, _read);
+
+	if (old_file == -1 || _read == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: can't read from file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 		free(buffer);
 		exit(98);
 	}
-	if (file_to == -1 || _write == -1)
+	if (new_file == -1 || _write == -1)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 		free(buffer);
@@ -62,16 +63,21 @@ int main(int argc, char *argv[])
 		if (_write != _read)
 		{
 			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
-			close(file_from);
-			close(file_to);
 			exit(99);
 		}
 	}
-	if (close(file_from) == -1 || close(file_to) == -1)
+	if (close(old_file) == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't close file %d\n", file_from);
-		dprintf(STDERR_FILENO, "Error: Can't close file %d\n", file_to);
+		dprintf(STDERR_FILENO, "Error: Can't close file %d\n", old_file);
 		exit(100);
 	}
+	if (close(new_file) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close file %d\n", new_file);
+		exit(100);
+	}
+	free(buffer);
+	close(old_file);
+	close(new_file);
 	return (0);
 }
