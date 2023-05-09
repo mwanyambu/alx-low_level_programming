@@ -1,9 +1,9 @@
 #include "main.h"
-/**
+/** 
  * _buffer - allocates memory for a buffer
  * @file: filename
  * Return: buffer
- */
+ 
 char *_buffer(char *file)
 {
 	char *buffer;
@@ -15,7 +15,7 @@ char *_buffer(char *file)
 		exit(99);
 	}
 	return (buffer);
-}
+} */
 /**
  * main - copies contents of one file to the other
  * @argc: number of arguments
@@ -35,7 +35,7 @@ int main(int argc, char **argv)
 	}
 	source = open(argv[1], O_RDONLY);
 	destination = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC | O_APPEND, 0644);
-	buffer = _buffer(argv[2]);
+	buffer = malloc(sizeof(char) * 1024);
 	rd = read(source, buffer, 1024);
 	wr = write(destination, buffer, rd);
 	if (source == -1 || rd == -1)
@@ -46,10 +46,10 @@ int main(int argc, char **argv)
 	}
 	while (rd > 0)
 	{
-		if (destination == -1 || wr == -1 || wr != rd)
+		if (destination == -1 || wr == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
-			free(buffer);
+			close(source);
 			exit(99);
 		}
 	}
