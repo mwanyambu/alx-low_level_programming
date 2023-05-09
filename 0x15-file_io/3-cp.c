@@ -42,15 +42,16 @@ int main(int argc, char **argv)
 	{
 		dprintf(STDERR_FILENO, "Error: can't read to %s\n", argv[1]);
 		free(buffer);
-		close(source);
 		exit(98);
 	}
-	if (destination == -1 || wr == -1 || (rd > 0 && wr != rd))
+	while (rd > 0)
 	{
-		dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
-		free(buffer);
-		close(destination);
-		exit(99);
+		if (destination == -1 || wr == -1 || wr != rd)
+		{
+			dprintf(STDERR_FILENO, "Error: can't write to %s\n", argv[2]);
+			free(buffer);
+			exit(99);
+		}
 	}
 	if (close(source) == -1)
 	{
