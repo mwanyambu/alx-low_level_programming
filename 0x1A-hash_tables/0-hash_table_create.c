@@ -9,14 +9,17 @@ hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *nw_htable;
 
+	if (size == 0)
+		return (NULL);
+
 	nw_htable = malloc(sizeof(hash_table_t));
 
 	if (nw_htable ==  NULL)
 	{
 		return (NULL);
 	}
-	nw_htable->array = malloc(sizeof(hash_node_t *) * size);
 	nw_htable->size = size;
+	nw_htable->array = malloc(sizeof(hash_node_t *) * size);
 
 	if (nw_htable->array == NULL)
 	{
