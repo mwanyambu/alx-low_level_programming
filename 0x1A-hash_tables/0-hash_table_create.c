@@ -9,16 +9,13 @@
 hash_table_t *hash_table_create(unsigned long int size)
 {
 	hash_table_t *nw_htable;
-
-	if (size == 0)
-		return (NULL);
+	unsigned long int x;
 
 	nw_htable = malloc(sizeof(hash_table_t));
 
 	if (nw_htable ==  NULL)
-	{
 		return (NULL);
-	}
+	
 	nw_htable->size = size;
 	nw_htable->array = malloc(sizeof(hash_node_t *) * size);
 
@@ -27,5 +24,7 @@ hash_table_t *hash_table_create(unsigned long int size)
 		free(nw_htable);
 		return (NULL);
 	}
+	for (x = 0; x < size; x++)
+		nw_htable->array[x] = NULL;
 	return (nw_htable);
 }
