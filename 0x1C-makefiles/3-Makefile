@@ -16,5 +16,3 @@ o-clean:
 fclean: clean oclean
 
 re: fclean all
-
-.PHONY: all clean oclean fclean re
