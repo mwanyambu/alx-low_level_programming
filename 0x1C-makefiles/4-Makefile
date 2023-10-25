@@ -5,12 +5,8 @@ OBJ = $(SRC:.c=.o)
 NAME = school
 RM = rm -f
 
-all: $(NAME)
-
-$(NAME): $(OBJ)
+all: $(OBJ)
 	$(CC) $(OBJ) -o $(NAME)
-%.o: %.c
-	$(CC) $(CFLAGS) -C $< -O $@
 
 clean:
 	$(RM) *~ $(NAME)
