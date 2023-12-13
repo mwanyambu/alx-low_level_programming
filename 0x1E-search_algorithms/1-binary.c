@@ -18,21 +18,15 @@ int binary_search(int *array, size_t size, int value)
 	{
 		return (-1);
 	}
-	printf("Searching in array: ");
-	for (x = 0; x < size; x++)
-	{
-		printf("%d ", array[x]);
-	}
-	printf("\n");
 
 	while (left <= right)
 	{
 		center = left + (right - left) / 2;
 
-		printf("Searching in array: ");
+		printf("Searching for array: ");
 		for (x = left; x <= right; x++)
 		{
-			printf("%d ", array[x]);
+			printf("%d, ", array[x]);
 		}
 		printf("\n");
 
