@@ -23,7 +23,7 @@ int binary_search(int *array, size_t size, int value)
 	{
 		center = left + (right - left) / 2;
 
-		printf("Searching for array: ");
+		printf("Searching in array: ");
 		for (x = left; x <= right; x++)
 		{
 			printf("%d", array[x]);
